@@ -11,7 +11,7 @@ import paymentRouter from "./routes/payment.route.js"
 
 const app = express()
 app.use(cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:5173",
+    origin: process.env.FRONTEND_URL ||https://q-hired-cntz2atri-ankush-yadavs-projects-4a5f752f.vercel.app/",
     credentials:true
 }))
 
