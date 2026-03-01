@@ -1,7 +1,7 @@
 {
   "version": 2,
   "framework": "vite",
-  "installCommand": "cd AI_Interviewer/client && npm install",
-  "buildCommand": "cd AI_Interviewer/client && npm run build",
-  "outputDirectory": "AI_Interviewer/client/dist"
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist"
 }
