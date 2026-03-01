@@ -1,5 +1,5 @@
 import React from 'react'
-import Auth from "./pages/auth.jsx";
+import Auth from "./pages/auth";
 import { BsRobot } from "react-icons/bs";
 import { IoSparkles } from "react-icons/io5";
 import { motion } from "motion/react"
