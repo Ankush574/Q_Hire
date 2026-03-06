@@ -30,7 +30,7 @@ function App() {
 
   },[dispatch])
   return (
-    <Routes>
+    <Routes> 
       <Route path='/' element={<Home/>}/>
       <Route path='/auth' element={<Auth/>}/>
       <Route path='/interview' element={<InterviewPage/>}/>
