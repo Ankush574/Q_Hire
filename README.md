@@ -1,0 +1,256 @@
+## 🚀 Live Preview
+
+🔗 https://ankush-q-hire.vercel.app/
+
+
+## 🎯 Overview
+
+**Q_Hire** is a full-stack interview preparation platform that leverages AI to provide personalized mock interviews. The system analyzes resumes, generates role-specific questions, evaluates answers in real-time, and provides detailed performance reports with actionable feedback.
+
+### Key Highlights
+
+- **AI-Powered Question Generation**: Dynamic question creation based on role, experience, and resume analysis
+- **Voice Interview Simulation**: Real-time speech recognition and synthesis for authentic interview experience
+- **Intelligent Evaluation**: Multi-dimensional scoring (confidence, communication, correctness)
+- **Resume Analysis**: PDF parsing and skill extraction using AI
+- **Performance Analytics**: Comprehensive reports with trend analysis and downloadable PDFs
+- **Credit-Based System**: Flexible pricing with Razorpay integration
+
+
+## ✨ Features
+
+### 🎤 **AI Interview Engine**
+- Resume parsing with PDF.js for skill and project extraction
+- Dynamic question generation based on role, experience, and mode (HR/Technical)
+- Adaptive difficulty progression (easy → medium → hard)
+- Real-time speech-to-text with Web Speech API
+- Natural language AI answer evaluation
+
+### 📊 **Performance Analytics**
+- Multi-dimensional scoring system:
+  - **Confidence**: Voice clarity and presentation quality
+  - **Communication**: Language simplicity and structure
+  - **Correctness**: Technical accuracy and relevance
+- Question-wise breakdown with individual feedback
+- Performance trend visualization with Recharts
+- Downloadable PDF reports with jsPDF
+
+### 💳 **Monetization**
+- Credit-based system (50 credits per interview)
+- Razorpay payment gateway integration
+- Three pricing tiers: Free (100), Starter (150), Pro (650)
+- Secure payment verification with HMAC SHA-256
+
+### 🔐 **Authentication & Security**
+- Firebase Google OAuth integration
+- JWT-based session management
+- HTTP-only cookies for token storage
+- Protected API routes with authentication middleware
+
+### 🎨 **User Experience**
+- Responsive design with Tailwind CSS
+- Smooth animations with Framer Motion
+- AI avatar video synchronization
+- Real-time subtitle display
+- Interview history tracking
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **Framework**: React 19.2.0 with Vite
+- **State Management**: Redux Toolkit
+- **Routing**: React Router DOM
+- **Styling**: Tailwind CSS 4.2
+- **Animations**: Framer Motion
+- **Charts**: Recharts
+- **PDF Generation**: jsPDF + jsPDF-AutoTable
+- **Authentication**: Firebase Auth
+- **HTTP Client**: Axios
+- **Icons**: React Icons
+
+### Backend
+- **Runtime**: Node.js with Express 5.2
+- **Database**: MongoDB with Mongoose
+- **AI Service**: OpenRouter API (GPT-4o-mini)
+- **PDF Parsing**: PDF.js
+- **Authentication**: JWT + Cookie Parser
+- **File Upload**: Multer
+- **Payment**: Razorpay SDK
+- **Environment**: dotenv
+
+### Third-Party Services
+- **AI Provider**: OpenRouter (OpenAI GPT-4o-mini)
+- **Payment Gateway**: Razorpay
+- **Authentication**: Firebase Auth
+- **Database Hosting**: MongoDB Atlas (production ready)
+
+---
+
+## 📁 Project Structure
+
+```
+AI_Interviewer/
+├── client/                          # Frontend React application
+│   ├── public/
+│   │   └── img1.png                # Favicon
+│   ├── src/
+│   │   ├── assets/
+│   │   │   ├── videos/             # AI avatar videos
+│   │   │   │   ├── male-ai.mp4
+│   │   │   │   └── female-ai.mp4
+│   │   │   └── *.png               # Feature images
+│   │   ├── components/
+│   │   │   ├── AuthModel.jsx       # Authentication modal
+│   │   │   ├── Footer.jsx          # Footer component
+│   │   │   ├── Navbar.jsx          # Navigation bar
+│   │   │   ├── Step1SetUp.jsx      # Interview setup wizard
+│   │   │   ├── Step2Interview.jsx  # Live interview interface
+│   │   │   ├── Step3Report.jsx     # Performance report
+│   │   │   └── Timer.jsx           # Circular timer component
+│   │   ├── pages/
+│   │   │   ├── Home.jsx            # Landing page
+│   │   │   ├── Auth.jsx            # Authentication page
+│   │   │   ├── InterviewPage.jsx   # Interview flow container
+│   │   │   ├── InterviewHistory.jsx # Past interviews
+│   │   │   ├── InterviewReport.jsx # Individual report view
+│   │   │   └── Pricing.jsx         # Pricing plans
+│   │   ├── redux/
+│   │   │   ├── store.js            # Redux store configuration
+│   │   │   └── userSlice.js        # User state slice
+│   │   ├── utils/
+│   │   │   └── firebase.js         # Firebase configuration
+│   │   ├── App.jsx                 # Root component
+│   │   ├── main.jsx                # Application entry point
+│   │   └── index.css               # Global styles
+│   ├── .env                        # Environment variables
+│   ├── .gitignore
+│   ├── package.json
+│   ├── vite.config.js
+│   ├── tailwind.config.js
+│   └── postcss.config.js
+│
+└── server/                          # Backend Node.js application
+    ├── config/
+    │   ├── connectDb.js            # MongoDB connection
+    │   └── token.js                # JWT token generation
+    ├── controllers/
+    │   ├── auth.controller.js      # Authentication logic
+    │   ├── interview.controller.js # Interview CRUD operations
+    │   ├── payment.controller.js   # Payment processing
+    │   └── user.controller.js      # User operations
+    ├── middlewares/
+    │   ├── isAuth.js               # JWT authentication middleware
+    │   └── multer.js               # File upload configuration
+    ├── models/
+    │   ├── user.model.js           # User schema
+    │   ├── interview.model.js      # Interview schema
+    │   └── payment.model.js        # Payment schema
+    ├── routes/
+    │   ├── auth.route.js           # Authentication routes
+    │   ├── interview.route.js      # Interview routes
+    │   ├── payment.route.js        # Payment routes
+    │   └── user.route.js           # User routes
+    ├── services/
+    │   ├── openRouter.service.js   # OpenRouter AI integration
+    │   └── razorpay.service.js     # Razorpay configuration
+    ├── public/                      # Uploaded resume storage
+    ├── .env                        # Environment variables
+    ├── .gitignore
+    ├── index.js                    # Server entry point
+    └── package.json
+```
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- **Node.js** >= 18.x
+- **MongoDB** (local or Atlas)
+- **Firebase** project for authentication
+- **OpenRouter API** key
+- **Razorpay** account (for payments)
+
+### Environment Variables
+
+#### Client (`.env`)
+```env
+VITE_FIREBASE_APIKEY=your_firebase_api_key
+VITE_RAZORPAY_KEY_ID=your_razorpay_key_id
+VITE_SERVER_URL=https://your-backend-domain.com
+```
+
+#### Server (`.env`)
+```env
+PORT=8000
+MONGODB_URL=mongodb://localhost:27017/ai_interviewer
+JWT_SECRET=your_jwt_secret_key
+OPENROUTER_API_KEY=your_openrouter_api_key
+RAZORPAY_KEY_ID=your_razorpay_key_id
+RAZORPAY_KEY_SECRET=your_razorpay_key_secret
+FRONTEND_URL=https://your-frontend-domain.com
+NODE_ENV=production
+```
+
+### Installation
+
+#### 1. Clone the Repository
+```bash
+git clone https://github.com/yourusername/ai-interviewer.git
+cd ai-interviewer
+```
+
+#### 2. Install Backend Dependencies
+```bash
+cd server
+npm install
+```
+
+#### 3. Install Frontend Dependencies
+```bash
+cd ../client
+npm install
+```
+
+#### 4. Start MongoDB
+```bash
+# Local MongoDB
+mongod
+
+# Or use MongoDB Atlas connection string in .env
+```
+
+#### 5. Run Backend Server
+```bash
+cd server
+npm run dev
+# Server runs on http://localhost:8000
+```
+
+#### 6. Run Frontend Application
+```bash
+cd client
+npm run dev
+# Client runs on http://localhost:5173
+```
+
+## 🚀 Deployment
+
+### Frontend (Vercel/Netlify)
+```bash
+cd client
+npm run build
+# Deploy dist/ folder
+```
+
+### Backend (Heroku/Railway/Render)
+```bash
+cd server
+# Set environment variables
+# Deploy with Node.js buildpack
+```
+
+**Built with ❤️ using React, Node.js, and AI**
